@@ -4,7 +4,7 @@
     {
         //string text = "//;\n1;2";
         Console.WriteLine(add("//***\n1***2***3"));
-        Console.WriteLine(bracketdDelimeter("//[*][%]\n1*2%3"));
+        //Console.WriteLine(bracketdDelimeter("//[*][%]\n1*2%3"));
     }
 
     static int add(string numbers) 
@@ -23,13 +23,16 @@
                 delimiter = numbers.Substring(2, 1);
                 if (delimiter == "*") 
                 {
-                    delimiter = extendedDelimeter(numbers);
+                    delimiter = extendedDelimeter(numbers);//camel casing on methods is wrong
                 }
                 delimiters = new string[] { ",", "\n", delimiter };
-                if (delimiter == "[") 
-                { 
-                  
-                }
+                //if (delimiter == "[") 
+                //{
+                //    for (int i = 0; i < numbers.Length; i++)
+                //    {
+                        
+                //    }
+                //}
             }
             //Split an array with multiply delimeters
               
@@ -38,7 +41,7 @@
             for (int i = 0; i < numbersArray.Length; i++)
             {
                 //Check wheather the array item is a number or integer
-                isInt = int.TryParse(numbersArray[i], out int num);
+                isInt = int.TryParse(numbersArray[i], out int num); //is int used once?
                 if (isInt == true) 
                 {
                     //Validating array items greater than 1000
@@ -87,12 +90,12 @@
         }
         return delimeter;
     }
-    static string bracketdDelimeter(string numbers)
-    {
-        string  delimeter = "";
-        int index = numbers.LastIndexOf("]");
-        delimeter = numbers.Substring(3, index - 3).Replace("]","");
-        delimeter = delimeter.Replace("[", "");
-        return delimeter;
-    }
+    //static string bracketdDelimeter(string numbers)
+    //{
+    //    string  delimeter = "";
+    //    int index = numbers.LastIndexOf("]");
+    //    delimeter = numbers.Substring(3, index - 3).Replace("]","");
+    //    delimeter = delimeter.Replace("[", "");
+    //    return delimeter;
+    //}
 }
